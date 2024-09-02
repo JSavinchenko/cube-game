@@ -38,12 +38,11 @@ export const ModuleBetPanel = ({
   ];
 
   const [image, setNewImage] = useState(diceImages[0]);
-  const [betSize, setBetSize] = useState(0);
   const [resultText, setResultText] = useState<string | undefined>();
   const [resultMessage, setResultMessage] = useState<string | undefined>();
   const [isShaking, setIsShaking] = useState(false);
 
-  const rollDice = (betType: string, inputValue: string | undefined) => {
+  const rollDice = (betType: string, betSize: number, inputValue: string | undefined) => {
     if (!isLoggedIn) return;
 
     setIsShaking(true);
@@ -99,8 +98,7 @@ export const ModuleBetPanel = ({
 
   const handleBetClick = (type: string, size: number, value?: string) => {
     if (!isLoggedIn) return;
-    setBetSize(size);
-    rollDice(type, value);
+    rollDice(type, size, value);
   };
 
   return (
@@ -120,7 +118,7 @@ export const ModuleBetPanel = ({
           isDisabled={!isLoggedIn}
           isShaking={isShaking}
         />
-        <MainPanel onBetClick={handleBetClick} onBetSizeChange={setBetSize} />
+        <MainPanel onBetClick={handleBetClick} />
       </ContentWrapper>
       <Overlay isDisabled={!isLoggedIn} />
     </StyledBetPanel>

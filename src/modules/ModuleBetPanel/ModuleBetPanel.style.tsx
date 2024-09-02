@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const StyledBetPanel = styled.div`
   position: relative;
+  box-sizing: border-box;
 `;
 
 export const ContentWrapper = styled.div<{isDisabled: boolean}>`

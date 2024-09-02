@@ -8,7 +8,7 @@ import {MainPanelProps} from './MainPanel.types';
 import {useEffect, useState} from 'react';
 import {SpecificButton} from '../../UI/SpecificButton/SpecificButton';
 
-export const MainPanel = ({onBetClick, onBetSizeChange}: MainPanelProps) => {
+export const MainPanel = ({onBetClick}: MainPanelProps) => {
   const options = ['1.00', '5.00', '10.00', '15.00', '20.00'];
 
   const [inputValue, setInputValue] = useState('');
@@ -19,7 +19,6 @@ export const MainPanel = ({onBetClick, onBetSizeChange}: MainPanelProps) => {
 
   const handleDropdownChange = (value: string) => {
     setSelectedBetSize(value);
-    onBetSizeChange(Number(value));
   };
 
   const handleBetTypeClick = (type: string) => {

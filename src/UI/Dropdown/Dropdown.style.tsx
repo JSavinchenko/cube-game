@@ -40,7 +40,7 @@ export const StyledButton = styled.button`
   justify-content: space-between;
   gap: 5px;
   align-items: center;
-  padding-inline-start: 10px;
+  padding-inline: 10px;
   cursor: pointer;
   border: none;
   height: 100%;
